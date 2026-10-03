@@ -1,0 +1,169 @@
+{
+  "provider": "stub",
+  "model": "stub-agent-v1",
+  "prompt_format_version": 1,
+  "recorded_on": "2026-10-03",
+  "note": "stub-recorded for offline tests; real gemma3:27b cassette recorded separately. Keys are sha256(model, prompt) over the canonical agent loop. The stub is task-naive on purpose, so replaying this cassette does not pass the gate.",
+  "entries": {
+    "df80ec1c2bb756185db073bbb1298a2938bb9bdce5e2fa5198619368c25d015f": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve What is the combined crew of Halcyon Ridge Station and Vesper Hollow Station?"
+    },
+    "573a86f8b147106a95d565e7a27f959db66f40883f2fedf48d246ab21243720c": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Halcyon Ridge Station was commissioned in 2131. It carries a crew of 42 and operates 18 sensor arrays. The station sits at an elevation of 3400 meters and generates 76 megawatts of power."
+    },
+    "0afc19a0d77d62aa6adfeb88521f547f5a3806353b8da00b58282263a91e6187": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve What is the combined crew of Cinder Basin Station and Aurora Shelf Station?"
+    },
+    "ced2f425ad558b536dd7e1fd79a7c54f2921d7e45e2c63c16a219b37bf559550": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Aurora Shelf Station was commissioned in 2126. It carries a crew of 28 and operates 30 sensor arrays. The station sits at an elevation of 5200 meters and generates 40 megawatts of power."
+    },
+    "5e55d3e8b6d97b7c7c416cccde2e2db24113a0d3e34a926637b038191519bf2b": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve What is the combined crew of Quartz Meridian Station and Umbral Flats Station?"
+    },
+    "ee22f32e48fa9afe5bf7c495744efeac52b84bfe084ce3be076b294c0947705b": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Quartz Meridian Station was commissioned in 2138. It carries a crew of 61 and operates 21 sensor arrays. The station sits at an elevation of 1800 meters and generates 95 megawatts of power."
+    },
+    "fe86385a1cc9d260b5f73c83eaf219c2710c0eadbd3366b6822d48a5eb480aec": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve What is the combined crew of Granite Spire Station and Ember Delta Station?"
+    },
+    "f1e987268dea51925dbf177d2411d760f3dae5c95cd5668a0a8e4d5fe9e86c42": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Ember Delta Station was commissioned in 2142. It carries a crew of 39 and operates 11 sensor arrays. The station sits at an elevation of 250 meters and generates 65 megawatts of power."
+    },
+    "d9c60ba8d5e13614a2d0ac9cb88618afd5d4d010d2c294954a081a1c0a9a3840": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve How many more sensor arrays does Aurora Shelf Station have than Cinder Basin Station?"
+    },
+    "7901e632d5fbd676d00a519130bb347460bdd72104ab3c89fb40144123b796ee": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Aurora Shelf Station was commissioned in 2126. It carries a crew of 28 and operates 30 sensor arrays. The station sits at an elevation of 5200 meters and generates 40 megawatts of power."
+    },
+    "ffebaa15cf495890b2fed164d2950cd43d7966deade1010b2f3770a69be130bf": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve How many more sensor arrays does Cobalt Terrace Station have than Silent Harbor Station?"
+    },
+    "de3f50a51932c6136ed8e6e45327375a7e1cbca29257b7ba493bfaf9d919208a": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Cobalt Terrace Station was commissioned in 2128. It carries a crew of 53 and operates 26 sensor arrays. The station sits at an elevation of 2600 meters and generates 101 megawatts of power."
+    },
+    "865fb0b9461c327fbcdf5210286d319d6874b49fef67052a423d681f57db100e": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve How many more sensor arrays does Solace Crater Station have than Frostline Gap Station?"
+    },
+    "e527bdabc63fb0735b6f80ca6ac636277d29b8b2543cea16b69fdaf0ea0e4632": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Frostline Gap Station was commissioned in 2127. It carries a crew of 47 and operates 22 sensor arrays. The station sits at an elevation of 4700 meters and generates 72 megawatts of power."
+    },
+    "e005fad04be263fa1bf58483be96fc366f5d4512b4eaa51f4ac830e79faa29ce": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve What is the total power output of Tidemark Point Station and Driftwood Cove Station in megawatts?"
+    },
+    "d1892345524cd4821bd4769799933fc6acad866e3506b94cbc82524d1b8e0821": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Driftwood Cove Station was commissioned in 2130. It carries a crew of 25 and operates 14 sensor arrays. The station sits at an elevation of 30 meters and generates 18 megawatts of power."
+    },
+    "301b19a109f54dcb8f641f8db38da4b867eae5bc7c156acd6a2f1f6e61567a1e": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve What is the total power output of Granite Spire Station and Cinder Basin Station in megawatts?"
+    },
+    "81faf907fa4114304d682b1ff5b6e74cb2264a050503dca74ee6799981f0eb35": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Cinder Basin Station was commissioned in 2140. It carries a crew of 50 and operates 12 sensor arrays. The station sits at an elevation of 900 meters and generates 120 megawatts of power."
+    },
+    "935e9bb1dc98f134c52f568a8e645b96f9fe84e5516c6cd241593cdec79b5411": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve What is the total power output of Quartz Meridian Station and Cobalt Terrace Station in megawatts?"
+    },
+    "c89e1154a35043a7faea75b1bfdb7fe6f8294095bf72c3018372497d12cf8d0c": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Cobalt Terrace Station was commissioned in 2128. It carries a crew of 53 and operates 26 sensor arrays. The station sits at an elevation of 2600 meters and generates 101 megawatts of power."
+    },
+    "a679eac0dd6a46aeba43a9c8e4dcd1fd29afbf8f2c831a98126e8f3133e236e3": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve What is the combined elevation of Halcyon Ridge Station and Frostline Gap Station in meters?"
+    },
+    "14391fd65ed4cc9e77a53efb0b6cbd27830f2833ac0c193fe30882d86c13af70": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Frostline Gap Station was commissioned in 2127. It carries a crew of 47 and operates 22 sensor arrays. The station sits at an elevation of 4700 meters and generates 72 megawatts of power."
+    },
+    "d6a0da8f2a986c9584c6eecb1714954aef9e2f77f3afc0b896ecd7804ab82fea": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve What is the combined elevation of Aurora Shelf Station and Solace Crater Station in meters?"
+    },
+    "91c26313fad4d866eb3a15bd6801f064f442df1b7ef50f5b055b2c5432f58a0d": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Aurora Shelf Station was commissioned in 2126. It carries a crew of 28 and operates 30 sensor arrays. The station sits at an elevation of 5200 meters and generates 40 megawatts of power."
+    },
+    "38f0bd8bf8a080e6a1929ad8464257cc81b815a68d3bdcd8369dca15220f8597": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve How much larger is the crew at Quartz Meridian Station than at Verdant Hollow Station?"
+    },
+    "b7ec9f173796aa69ca104bbdd2c09a0c5d0ab72156ea71de7f6447cbf64351d9": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Quartz Meridian Station was commissioned in 2138. It carries a crew of 61 and operates 21 sensor arrays. The station sits at an elevation of 1800 meters and generates 95 megawatts of power."
+    },
+    "399e8984dce78bc7ab8e597ea8ebe4e6e467bb961766887d52a85c9e53ba9597": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve How much larger is the crew at Granite Spire Station than at Tidemark Point Station?"
+    },
+    "49e1e464efb090e52dfa7ebf6f9e9097ebad9480a78506205e59b42e3c342f16": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Granite Spire Station was commissioned in 2124. It carries a crew of 56 and operates 20 sensor arrays. The station sits at an elevation of 3900 meters and generates 110 megawatts of power."
+    },
+    "a71ff84fb0af9e77151a761e44bff62e9cf859e1dea4e0253f493b74f0c94989": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve What is the product of Verdant Hollow Station's crew and the number of sensor arrays at Tidemark Point Station?"
+    },
+    "ca1aaf2208713de9aa8ebbce6fa2759c8a85faa2de3383b974f9e7777fb50b38": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Tidemark Point Station was commissioned in 2133. It carries a crew of 19 and operates 9 sensor arrays. The station sits at an elevation of 15 meters and generates 22 megawatts of power."
+    },
+    "6689d6241130efb65641fab5a71e755def5243b2ad10678b17f94a39a2700943": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve In what year was Granite Spire Station commissioned?"
+    },
+    "a9e304d93f67cedff6c7704c342f73bbef19603db6391b65dc9d7417270ae56f": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Granite Spire Station was commissioned in 2124. It carries a crew of 56 and operates 20 sensor arrays. The station sits at an elevation of 3900 meters and generates 110 megawatts of power."
+    },
+    "290d0074b50939c101428d688db2d834c58991dc49e6f5249a59c6a68ca82bb5": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve How large is the crew at Solace Crater Station?"
+    },
+    "f6b10cb2b19fdc2aa4b4b60d1f4426c37ec1d2e1125feb39ccef78d60392934f": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Solace Crater Station was commissioned in 2145. It carries a crew of 44 and operates 27 sensor arrays. The station sits at an elevation of 4100 meters and generates 88 megawatts of power."
+    },
+    "efb42b69297d2a17e22a0d8797a24e748eb9bb3ac3c4578e36e3eff2dc179c6d": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve How many sensor arrays does Quartz Meridian Station operate?"
+    },
+    "2c6a7745b6b65262e3bdbb2bff43e6a8c18dfbf68353db44c5f637d4e0f5efbc": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Quartz Meridian Station was commissioned in 2138. It carries a crew of 61 and operates 21 sensor arrays. The station sits at an elevation of 1800 meters and generates 95 megawatts of power."
+    },
+    "301ec40113b15d61610c8c4a936d244c54f2b5b2368c87bb2fd5c919a854b660": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve What is the elevation of Aurora Shelf Station in meters?"
+    },
+    "27fb15efedcdd4e09cf3763886fb69689e2cb7bf3f77a1062b3582dc9547b5e5": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Aurora Shelf Station was commissioned in 2126. It carries a crew of 28 and operates 30 sensor arrays. The station sits at an elevation of 5200 meters and generates 40 megawatts of power."
+    },
+    "f6e655d913ec67b91331b536c90735c9d935bb4d7a405ea1c39eb608074a198c": {
+      "model": "stub-agent-v1",
+      "response": "ACTION: retrieve How much power does Cinder Basin Station generate in megawatts?"
+    },
+    "db6011647d109f2a2bc64c97b36727fde19cf22e7d14aed129e731737ce8a597": {
+      "model": "stub-agent-v1",
+      "response": "ANSWER: Cinder Basin Station was commissioned in 2140. It carries a crew of 50 and operates 12 sensor arrays. The station sits at an elevation of 900 meters and generates 120 megawatts of power."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+ailab-agents scaffolded locally 2026-10-03 from origin/main of:
+  ailab-template-python @ f17855c                                  (generic spine)
+  ailab-rag             @ 2a2c230a362e64edec4c50fa5b729242b823d35e  (eval/gate/config wiring and scripts ported, then adapted to the agents domain)
+  ailab-core            @ 06856ce7e489149c2d71638b06aa2dcd7c15e02e  (imported dependency: providers seam + regression-gate primitives)
+
+Local build; private-first; no GitHub remote in v1.
+The committed cassette (fixtures/cassettes/agent.json) is a STUB recording for offline tests.
+The real gemma3:27b cassette is recorded separately by the operator-gated `make record` step.
+OLLAMA_HOST is runtime-only and read from the environment; it is never committed.

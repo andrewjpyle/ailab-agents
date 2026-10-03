@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# pre-push: block the push if outgoing commits contain secrets or denylisted text.
+# Enable once per clone with `make hooks` (sets core.hooksPath=.githooks).
+#
+# git feeds one line per ref on stdin: <local ref> <local sha> <remote ref> <remote sha>
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "pre-push: gitleaks is not installed, refusing to push (fail closed)." >&2
+  echo "pre-push: install it with: brew install gitleaks" >&2
+  exit 1
+fi
+
+status=0
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [[ -z "${local_sha:-}" ]] && continue
+  # Deleting a remote ref sends nothing new.
+  [[ "$local_sha" =~ ^0+$ ]] && continue
+
+  if [[ "$remote_sha" =~ ^0+$ ]] || ! git cat-file -e "${remote_sha}^{commit}" 2>/dev/null; then
+    # New branch, or a remote tip we don't have: scan every commit reachable from local.
+    log_opts="$local_sha"
+    scope="all commits reachable from ${local_ref}"
+  else
+    log_opts="${remote_sha}..${local_sha}"
+    scope="${remote_sha:0:7}..${local_sha:0:7}"
+  fi
+
+  echo "pre-push: gitleaks scanning ${scope} -> ${remote_ref}"
+  if ! gitleaks git --no-banner --redact --config .gitleaks.toml --log-opts "$log_opts" .; then
+    echo "pre-push: gitleaks found secrets in ${scope}. Push blocked." >&2
+    status=1
+  fi
+done
+
+# The denylist scan covers every tracked file and the full history of every ref.
+if ! scripts/denylist_scan.sh; then
+  echo "pre-push: denylist scan failed. Push blocked." >&2
+  status=1
+fi
+
+exit "$status"

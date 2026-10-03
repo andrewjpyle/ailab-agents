@@ -1,0 +1,20 @@
+# `docker compose up` builds the image and runs the demo + eval once.
+services:
+  ailab:
+    build:
+      context: .
+      args:
+        GIT_COMMIT: ${GIT_COMMIT:-unknown}
+    image: ailab-agents:local
+    environment:
+      # Override any eval setting here or in your shell, e.g. AILAB_MAX_STEPS=8
+      AILAB_PROVIDER: ${AILAB_PROVIDER:-stub}
+      AILAB_MAX_STEPS: ${AILAB_MAX_STEPS:-6}
+    read_only: true
+    tmpfs:
+      - /tmp
+    volumes:
+      - results:/app/results
+
+volumes:
+  results:

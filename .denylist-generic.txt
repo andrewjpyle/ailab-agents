@@ -1,0 +1,16 @@
+# Generic denylist: public, non-identifying patterns that must never appear in
+# this repository or its history. One POSIX ERE per line, matched
+# case-insensitively by scripts/denylist_scan.sh. Lines starting with # are comments.
+#
+# Private, identifying patterns (hostnames, org names, project names) must NOT be
+# added here: they would leak the very names they protect. Supply those through
+# the AILAB_DENYLIST secret or ~/.config/ailab/denylist.txt instead.
+
+# Tailscale MagicDNS hostnames
+\.ts\.net\b
+# Tailscale CGNAT addresses (100.64.0.0/10)
+\b100\.(6[4-9]|[7-9][0-9]|1[01][0-9]|12[0-7])\.[0-9]{1,3}\.[0-9]{1,3}\b
+# Doppler token prefixes
+dp\.(st|ct|pt|sa)\.
+# Doppler token assignments
+DOPPLER_TOKEN=

@@ -1,0 +1,66 @@
+[project]
+name = "ailab-agents"
+version = "0.1.0"
+description = "A small, eval-gated, local-only bounded multi-hop tool-using agent lab."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Andrew Pyle" }]
+requires-python = ">=3.12"
+dependencies = [
+    "ailab-core @ git+https://github.com/andrewjpyle/ailab-core@06856ce7e489149c2d71638b06aa2dcd7c15e02e",
+]
+
+[project.scripts]
+ailab-eval = "ailab_agents.eval:main"
+ailab-demo = "ailab_agents.demo:main"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.13",
+    "pytest>=8.3",
+    "pytest-cov>=6.0",
+    "ruff>=0.8",
+]
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+# ailab-core is pinned by a direct git reference (an immutable commit SHA).
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ailab_agents"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+# Vendored README-graphics build tooling (readme_kit.py, render.py, build.py). Kept verbatim
+# from the shared kit so the graphics rebuild standalone; not linted as library source.
+extend-exclude = ["docs/assets/src"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "C4", "PT", "RUF", "N"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.coverage.run]
+source = ["ailab_agents"]
+omit = ["*/ailab_agents/__main__.py"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+fail_under = 90
+exclude_also = ["if __name__ == .__main__.:"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src", "tests"]

@@ -1,0 +1,20 @@
+# Regression gate for `ailab-eval`. CI fails if a metric drops below its floor MINUS the
+# tolerance band. Every key can be overridden by an environment variable (see README).
+
+[eval]
+lab = "ailab-agents"
+corpus = "fixtures/corpus.jsonl"
+tasks = "fixtures/tasks.jsonl"
+provider = "stub"                 # stub | replay
+model = "gemma3:27b"              # recorded model id to replay (keys are sha256(model, prompt))
+real_provider = "ollama"          # the provider name a real recorded pass must report
+max_steps = 6                     # bounded ReAct loop: steps per task
+output = "eval_results.json"
+primary_metric = "task_success"   # reported as `threshold` in eval_results.json
+tolerance = 0.05                  # gate band: fail only below floor - tolerance
+invalid_action_max = 0.20         # fail if more than this fraction of steps are malformed
+min_tasks = 8                     # fail (exit 2) below this many tasks
+
+[thresholds]
+task_success = 0.60
+tool_precision = 0.50

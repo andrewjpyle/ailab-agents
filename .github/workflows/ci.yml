@@ -1,0 +1,127 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GITLEAKS_VERSION: 8.30.1
+  # sha256 of gitleaks_8.30.1_linux_x64.tar.gz, from the release's checksums file.
+  GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+
+jobs:
+  secret-scan:
+    name: secret-scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install gitleaks (pinned, checksum-verified)
+        run: |
+          set -euo pipefail
+          asset="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          base="https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}"
+          curl -fsSL -o "$RUNNER_TEMP/$asset" "$base/$asset"
+          curl -fsSL -o "$RUNNER_TEMP/checksums.txt" "$base/gitleaks_${GITLEAKS_VERSION}_checksums.txt"
+          cd "$RUNNER_TEMP"
+          # Verify against both the published checksums file and the value pinned above.
+          grep " ${asset}\$" checksums.txt | sha256sum --check --strict
+          echo "${GITLEAKS_SHA256}  ${asset}" | sha256sum --check --strict
+          tar -xzf "$asset" gitleaks
+          sudo install -m 0755 gitleaks /usr/local/bin/gitleaks
+          gitleaks version
+
+      - name: gitleaks (full history)
+        run: gitleaks git --no-banner --redact --config .gitleaks.toml .
+
+      - name: Denylist scan (tracked files + full history)
+        env:
+          AILAB_DENYLIST: ${{ secrets.AILAB_DENYLIST }}
+          # Fork PRs cannot read secrets; only they may skip the private patterns.
+          AILAB_DENYLIST_OPTIONAL: ${{ github.event.pull_request.head.repo.fork == true && '1' || '0' }}
+        run: scripts/denylist_scan.sh
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv sync --locked
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run mypy
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv sync --locked
+      - run: uv run pytest --cov --cov-report=term-missing
+      - name: Calc safety (no eval/exec; unsafe payloads raise)
+        run: uv run pytest tests/test_calc_safety.py -q
+      - name: MCP parity (MCP path is byte-identical to the in-process registry)
+        run: uv run pytest tests/test_mcp_parity.py -q
+      - name: Proof-of-gate (the gate must fail on each sabotage)
+        run: uv run pytest tests/test_gate_red.py -q
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv sync --locked
+      - name: No em dash (U+2014) in docs
+        run: make lint-docs
+      - name: Learning-doc figures match the committed results
+        run: make check-learning-numbers
+
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv sync --locked --no-dev
+      # The eval goes green only once a REAL gemma3:27b cassette is recorded (operator-gated,
+      # via `make record`). Until that file exists this job is expected to fail: the committed
+      # cassette is a stub for tests, and the stub cannot pass the gate by design.
+      - name: Run eval (replay the real recorded cassette; fails below the thresholds)
+        run: >
+          uv run --no-sync ailab-eval --provider replay
+          --cassette fixtures/cassettes/agent_gemma3_27b.json --model gemma3:27b
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-results
+          path: eval_results.json
+          if-no-files-found: error
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build --build-arg GIT_COMMIT="${GITHUB_SHA::7}" -t ailab-agents:ci .
+      - name: Run image as a smoke test (demo)
+        run: docker run --rm ailab-agents:ci || true
+      - name: Assert the container runs as non-root
+        run: test "$(docker run --rm ailab-agents:ci id -u)" != "0"

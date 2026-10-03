@@ -1,0 +1,13 @@
+# gitleaks configuration: the upstream default ruleset plus project rules.
+# Run locally with `make scan`; CI and the pre-push hook use this same file.
+title = "ailab-template-python gitleaks config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "doppler-token-any"
+description = "Doppler token (service, CLI, personal, service-account, SCIM or audit)"
+regex = '''\bdp\.(?:st|ct|pt|sa|scim|audit)\.[A-Za-z0-9_-]{20,}'''
+keywords = ["dp."]
+tags = ["doppler", "token"]

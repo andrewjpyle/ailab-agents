@@ -1,0 +1,343 @@
+{
+  "provider": "ollama",
+  "model": "gemma3:27b",
+  "model_digest": "a418f5838eaf7fe2cfe0a3046c8384b68ba43a4435542c942f9db00a5f342203",
+  "ollama_version": "0.32.1",
+  "prompt_format_version": 1,
+  "temperature": 0,
+  "seed": 7,
+  "recorded_on": "2026-10-03",
+  "note": "Real recording from a local Ollama server (host from OLLAMA_HOST, never stored). Keys are sha256(model, prompt) built from the canonical bounded agent loop. Pinned temperature 0 and a fixed seed make a re-record deterministic.",
+  "entries": {
+    "b494fc3e757bb43783f99f8f2d0cb0af12136f134f266dc25fe6a60429260d38": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Halcyon Ridge Station crew size\n",
+      "prompt_eval_count": 138,
+      "eval_count": 11
+    },
+    "3a80f4afa0c0b05c3ca7f34eb1a9bf5ced05bbeedf9808aba84690210c7faa1e": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Vesper Hollow Station crew size\n",
+      "prompt_eval_count": 195,
+      "eval_count": 11
+    },
+    "9e9aa02432acc49b006bb435ecf96a52eed386ecf2e91a004d99aa6886d25a5d": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 42 + 37\nANSWER: 79",
+      "prompt_eval_count": 257,
+      "eval_count": 17
+    },
+    "47a946815c81fef37b8b07ee62de4a904c9d10d48452ecb8bedec5108249c42c": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Cinder Basin Station crew size\n",
+      "prompt_eval_count": 137,
+      "eval_count": 11
+    },
+    "a8c8e6f9d6aa20426e9fd57d4832ca42269c6d4325960e83459c3fff8290b6e8": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Aurora Shelf Station crew size\n",
+      "prompt_eval_count": 194,
+      "eval_count": 10
+    },
+    "8998dd188d898d60dc3b23ab3ab14561154447308c531214b9c41361320446ad": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 50 + 28\nANSWER: 78",
+      "prompt_eval_count": 254,
+      "eval_count": 17
+    },
+    "46f1c45dd939f87441e42a014cf13d1d5b89e0dd9fcff550217272eed52e6bf5": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Quartz Meridian Station crew size\n",
+      "prompt_eval_count": 137,
+      "eval_count": 10
+    },
+    "a5140159a308c2d6028211b74519ad13ff5b7050ab7a3a3d09977372c0102871": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Umbral Flats Station crew size\n",
+      "prompt_eval_count": 192,
+      "eval_count": 11
+    },
+    "093c66123ae04a633f9c87e0f647e0aa82853e62b44026515e5adfea2014b688": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 61 + 33\nANSWER: 94",
+      "prompt_eval_count": 253,
+      "eval_count": 17
+    },
+    "987d8e105ee8bb8ea9e3d41c989a1a3eda4b600aecb4a4bd88a9e41761cca4d2": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Granite Spire Station crew size\n",
+      "prompt_eval_count": 137,
+      "eval_count": 11
+    },
+    "2b1388df4b68964b9020e473985264dd46382f0ce74d352ac33a48bdb5553f84": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Ember Delta Station crew size\n",
+      "prompt_eval_count": 195,
+      "eval_count": 10
+    },
+    "ce4be2a16a7d3a36e6b596a8640af687a2a8f5cc25758581ecc42751ca3bc1ab": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 56 + 39\nANSWER: 95",
+      "prompt_eval_count": 254,
+      "eval_count": 17
+    },
+    "c68cd19f80ffc2061abba95966b074692197694a81bcd7a4dbd06864462d6620": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Aurora Shelf Station sensor arrays\n",
+      "prompt_eval_count": 138,
+      "eval_count": 10
+    },
+    "27dd21b12d9bcea111bde2105510caa4c8ffe887877b03c9b70da1c5f0014cf4": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Cinder Basin Station sensor arrays\n",
+      "prompt_eval_count": 193,
+      "eval_count": 11
+    },
+    "e09457ae780b0869dbfc3cfe730383e1a56ce1a8b561ce12548af713d98757ec": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 30 - 12\nANSWER: 18",
+      "prompt_eval_count": 255,
+      "eval_count": 17
+    },
+    "385a99529dff4edd31b09a9d7b5fda0171dd0a1649468eb0b8f1c482a5fc8b14": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Cobalt Terrace Station sensor arrays\n",
+      "prompt_eval_count": 137,
+      "eval_count": 10
+    },
+    "abed9f25298f7a20df3a4536a294035b296733374a89b7c09673b074be13c6b7": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Silent Harbor Station sensor arrays\n",
+      "prompt_eval_count": 193,
+      "eval_count": 10
+    },
+    "aeda1b34e0db190f78099269e72b557b50690ac4d9df9871f722b874903ca938": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 26 - 13\nANSWER: 13",
+      "prompt_eval_count": 251,
+      "eval_count": 17
+    },
+    "56fe5a3089e454d47d4600bcca5eb84d39e06b6b6ba18fac8253ac7ba29c06a6": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve \"Solace Crater Station sensor arrays\"\n",
+      "prompt_eval_count": 139,
+      "eval_count": 13
+    },
+    "401bd36eb44449e5f0694cef862907f2fc4e4e9a7aae26c2cb959f6ad29017d8": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve \"Frostline Gap Station sensor arrays\"\n",
+      "prompt_eval_count": 198,
+      "eval_count": 13
+    },
+    "4d5866ad95a0ab262c83b30cac134add6f684e8e7f85318f313e8d5d4bc40397": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 27 - 22\nANSWER: 5",
+      "prompt_eval_count": 262,
+      "eval_count": 16
+    },
+    "ce3b618bf0cd5f16e70720c0db9f6d5dc3366ef0c7d4660d2a71b4ac950e3be4": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Tidemark Point Station power output\n",
+      "prompt_eval_count": 141,
+      "eval_count": 11
+    },
+    "c582e46fd5f29cd35728e6707d57529c5a623146aa4b07aa4c4b799d89f62430": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Driftwood Cove Station power output\n",
+      "prompt_eval_count": 195,
+      "eval_count": 11
+    },
+    "bb8314e6cedb06484336f4aa2400b6fd848d6d8674fe952def13eccbf17fad3d": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 22 + 18\nANSWER: 40",
+      "prompt_eval_count": 255,
+      "eval_count": 17
+    },
+    "a8f18ad7e9aaaebf9eabac2573b0f27f725452e6690f630ec6607b778a335819": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Granite Spire Station power output\n",
+      "prompt_eval_count": 141,
+      "eval_count": 11
+    },
+    "b63c5fff27e17853f37291bdea6068f23ae2aa5ca0def91871436caf0ea73b86": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Cinder Basin Station power output\n",
+      "prompt_eval_count": 199,
+      "eval_count": 11
+    },
+    "c48fce914ca8d0159124de764e9bf69ecf5bde802ddcffb85bad5953d134d479": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 110 + 120\nANSWER: 230",
+      "prompt_eval_count": 261,
+      "eval_count": 20
+    },
+    "74e76491cc499795b068e2224b077e3d5ecaffb8bd6feef854512890a6b94210": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Quartz Meridian Station power output\n",
+      "prompt_eval_count": 139,
+      "eval_count": 10
+    },
+    "eae9d1c4afdb93e315aef109456176676b4d4a98bb58b32778dc30a6f5e060ee": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Cobalt Terrace Station power output\n",
+      "prompt_eval_count": 194,
+      "eval_count": 10
+    },
+    "ce12332643fe83649289d82f0d2532c095c46c3c94a43c0893ec7cee2c35ebc8": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 95 + 101\nANSWER: 196",
+      "prompt_eval_count": 255,
+      "eval_count": 19
+    },
+    "07e13e9608479ddd81f817fd4d64293a10f7d751e82dfef5c9e37edcd0f12f88": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Halcyon Ridge Station elevation\n",
+      "prompt_eval_count": 140,
+      "eval_count": 10
+    },
+    "254115bb6066f4132ef44c8fca6ff84cf56947c4dfbee707522cb8f9fb94a5e6": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Frostline Gap Station elevation\n",
+      "prompt_eval_count": 196,
+      "eval_count": 10
+    },
+    "bb2fd74eeaf904870062ac8641a64d1868c7161b88e594890920d038de217d92": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 3400 + 4700\nANSWER: 8100",
+      "prompt_eval_count": 257,
+      "eval_count": 23
+    },
+    "e4a6c530380e8190058ca2f5b39137ce3a2f349116377da9f97c77b62b17c71a": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Aurora Shelf Station elevation\n",
+      "prompt_eval_count": 139,
+      "eval_count": 9
+    },
+    "3aae3168130b4f3bc9a930735ba8b7dae90d791bd9e722c31fc45197e496a2b2": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Solace Crater Station elevation\n",
+      "prompt_eval_count": 193,
+      "eval_count": 10
+    },
+    "33f2654c6519b2f2ea7463e30292c6a8d0c8ace67f976737fa5d7e15bbcb15ef": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 5200 + 4100\nANSWER: 9300",
+      "prompt_eval_count": 254,
+      "eval_count": 23
+    },
+    "13f52a8fadf8e2c26ff555948e5aa3407b716aead601ccdc55da61a03ff52399": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Quartz Meridian Station crew size\n",
+      "prompt_eval_count": 139,
+      "eval_count": 10
+    },
+    "c0abf6ace33bed7a803253c4f5558fff74c6ecf7e428352eb3c483b645ac3526": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Verdant Hollow Station crew size\n",
+      "prompt_eval_count": 194,
+      "eval_count": 11
+    },
+    "d61c479ab646da6423b0ab87b11270b53e8c5faf1c49c2fba2ce88d7d6903a9a": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 61 - 22\nANSWER: 39",
+      "prompt_eval_count": 254,
+      "eval_count": 17
+    },
+    "a44e2c2ca66999d12c087fc59d1ee193f4b8d8780f4a945ca5acffd7086f860d": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Granite Spire Station crew size\n",
+      "prompt_eval_count": 140,
+      "eval_count": 11
+    },
+    "787086675dec7424dfe1a2f78eb9e050557b80c8dcfc2fe854af580a2c9fdcbf": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Tidemark Point Station crew size\n",
+      "prompt_eval_count": 198,
+      "eval_count": 11
+    },
+    "0633ade95cf8895db449fb1cc7b3993e01aa4922d52f744f45188003007cd944": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 56 - 19\nANSWER: 37",
+      "prompt_eval_count": 257,
+      "eval_count": 17
+    },
+    "e5febb5d73ea0daff95e8fed17b0bd07b830d7d743d4bf1c4dd85f4ddbba555c": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Verdant Hollow Station crew size\n",
+      "prompt_eval_count": 146,
+      "eval_count": 11
+    },
+    "98476edb7e8eb8930ffd9e24d01b11740a8f265440cef3db30b7997a440293ba": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Tidemark Point Station sensor arrays\n",
+      "prompt_eval_count": 201,
+      "eval_count": 11
+    },
+    "e4a86b91b859d8de70b89b79e732917a284cf90bafbf4370c3e6d48f23967519": {
+      "model": "gemma3:27b",
+      "response": "ACTION: calc 22 * 9\nANSWER: 198",
+      "prompt_eval_count": 260,
+      "eval_count": 17
+    },
+    "a8e63aa2c0c5031827e24ea8152040b9b73091216fc488ef994d8cf361e44fd0": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve \"Granite Spire Station commissioning year\"\n",
+      "prompt_eval_count": 132,
+      "eval_count": 14
+    },
+    "231baa8058e0064e96809d7cdc3d6e42dc36081c97c204368438204039db499d": {
+      "model": "gemma3:27b",
+      "response": "ANSWER: 2124\n",
+      "prompt_eval_count": 193,
+      "eval_count": 9
+    },
+    "2aaa5726f8eab17970a92b97168e6198ba7adecafc1c76156195d6bcda15197f": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Solace Crater Station crew size\n",
+      "prompt_eval_count": 133,
+      "eval_count": 11
+    },
+    "62c15a11e7090c77aac338f9bcac2e6e408bd8b9c95c8c7485435aa40e4ceb6b": {
+      "model": "gemma3:27b",
+      "response": "ANSWER: The crew at Solace Crater Station is 44.",
+      "prompt_eval_count": 190,
+      "eval_count": 15
+    },
+    "2f5f987976cd5d6d660d66f72b756c943699a694477cac60b4066eb65f5b64e2": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve \"Quartz Meridian Station sensor arrays\"\n",
+      "prompt_eval_count": 132,
+      "eval_count": 12
+    },
+    "db82c9a1263fddc3cd2544496b9f07a0ce4409754dfa2e61bc58e15f9cc12c23": {
+      "model": "gemma3:27b",
+      "response": "ANSWER: 21",
+      "prompt_eval_count": 189,
+      "eval_count": 6
+    },
+    "dbee8c4be83fad0b338ef8ae21f26a326292b995f035d303b6d1ceac360449c9": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Aurora Shelf Station elevation\n",
+      "prompt_eval_count": 133,
+      "eval_count": 9
+    },
+    "bb80c897ee05d2de77cd504dd412f3078d359abeb1a34ba678ca2027d5551124": {
+      "model": "gemma3:27b",
+      "response": "ANSWER: 5200",
+      "prompt_eval_count": 187,
+      "eval_count": 8
+    },
+    "ec982e6fd3a61d8af6cbd63ea39fb2cb957fefda825a4426acbd1bef75d0215f": {
+      "model": "gemma3:27b",
+      "response": "ACTION: retrieve Cinder Basin Station power generation\n",
+      "prompt_eval_count": 134,
+      "eval_count": 11
+    },
+    "19f74492673ccdb65950e1fb27124185f5c473176062445413a4373e5db34d7d": {
+      "model": "gemma3:27b",
+      "response": "ANSWER: 120 megawatts",
+      "prompt_eval_count": 191,
+      "eval_count": 8
+    }
+  }
+}

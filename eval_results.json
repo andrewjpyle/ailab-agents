@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "lab": "ailab-agents",
+  "dataset": "tasks",
+  "provider": "ollama",
+  "model": "gemma3:27b",
+  "primary_metric": "task_success",
+  "metrics": {
+    "task_success": 0.9,
+    "tool_precision": 1.0,
+    "invalid_action_rate": 0.0,
+    "mean_steps": 2.75,
+    "n": 20
+  },
+  "threshold": 0.6,
+  "passed": true,
+  "commit": null,
+  "generated_at": "2026-10-03T23:10:20Z",
+  "corpus_sha256": "2c6de4d8e32c5e431137cd70ae5e901af893952cea82c9955f1d06badea348ae",
+  "tasks_sha256": "044d9d0f49570578739a0756568280e4d6178e34776902ca99a802cc9ac88a76",
+  "config": {
+    "max_steps": 6,
+    "provider": "stub",
+    "min_tasks": 8,
+    "tolerance": 0.05,
+    "invalid_action_max": 0.2
+  },
+  "tolerance": 0.05,
+  "thresholds": {
+    "task_success": 0.6,
+    "tool_precision": 0.5
+  },
+  "authenticity": {
+    "provider": "ollama",
+    "expected": "ollama",
+    "authentic": true
+  },
+  "tool_usage": {
+    "total_tool_calls": 35,
+    "no_tools_mode": false
+  },
+  "non_triviality": {
+    "distinct_answers": 20,
+    "answered_n": 20
+  },
+  "failures": []
+}

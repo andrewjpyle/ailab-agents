@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# The labeled stub baseline (results/stub_baseline.json) IS committed: docs/LEARNING.md
+# figures and the CI check-learning-numbers step are validated against it. eval_results.json
+# IS also committed: it is the canonical real gemma3:27b pass, reproducible offline by replaying
+# the committed cassette. Re-running the eval rewrites the output file locally.
+
+# Local secrets and config: never commit
+.env
+.env.*
+denylist.txt
+*.pem
+*.key
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,11 @@
+# Build context allowlist: send only what the image needs.
+*
+!pyproject.toml
+!uv.lock
+!README.md
+!LICENSE
+!src/
+!eval_config.toml
+!fixtures/
+**/__pycache__
+**/*.pyc
