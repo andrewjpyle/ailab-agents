@@ -1,0 +1,15 @@
+{
+  "name": "demo",
+  "command": [
+    "uv",
+    "run",
+    "ailab-demo"
+  ],
+  "exit_code": 1,
+  "captured_at": "2026-10-04T00:19:22.463771+00:00",
+  "commit": "5674f4328c7dd04efc2e2b49ecf094ef68d7feb9",
+  "line_count": 29,
+  "env_passed": [],
+  "note": "",
+  "output": "== ailab-agents demo ==\n\ncorpus: 16 records, 20 tasks, tools=['retrieve', 'calc'], max_steps=6\n\nTask [t01]: What is the combined crew of Halcyon Ridge Station and Vesper Hollow Station?\n    required_tools=['retrieve', 'calc'] gold=79\n    step 1: ACTION retrieve What is the combined crew of Halcyon Ridge Station and Vesper Hollow Station?\n            -> Halcyon Ridge Station was commissioned in 2131. It carries a crew of 42 and operates 18 ...\n    step 2: ANSWER Halcyon Ridge Station was commissioned in 2131. It carries a crew of 42 and operates 18 sensor arrays. The station sits at an elevation of 3400 meters and generates 76 megawatts of power.\n    final: 'Halcyon Ridge Station was commissioned in 2131. It carries a crew of 42 and operates 18 sensor arrays. The station sits at an elevation of 3400 meters and generates 76 megawatts of power.' (normalized 'halcyon ridge station was commissioned in 2131. it carries a crew of 42 and operates 18 sensor arrays. the station sits at an elevation of 3400 meters and generates 76 megawatts of power.') -> MISS (stopped=answered)\n\nTask [t16]: In what year was Granite Spire Station commissioned?\n    required_tools=['retrieve'] gold=2124\n    step 1: ACTION retrieve In what year was Granite Spire Station commissioned?\n            -> Granite Spire Station was commissioned in 2124. It carries a crew of 56 and operates 20 ...\n    step 2: ANSWER Granite Spire Station was commissioned in 2124. It carries a crew of 56 and operates 20 sensor arrays. The station sits at an elevation of 3900 meters and generates 110 megawatts of power.\n    final: 'Granite Spire Station was commissioned in 2124. It carries a crew of 56 and operates 20 sensor arrays. The station sits at an elevation of 3900 meters and generates 110 megawatts of power.' (normalized 'granite spire station was commissioned in 2124. it carries a crew of 56 and operates 20 sensor arrays. the station sits at an elevation of 3900 meters and generates 110 megawatts of power.') -> MISS (stopped=answered)\n\n== eval ==\n\n| Date | Commit | Provider | Dataset | max_steps | task_success | tool_precision | invalid_rate | mean_steps | Notes |\n|---|---|---|---|---|---|---|---|---|---|\n| 2026-10-04 | 5674f43 | stub | tasks (n=20) | 6 | 0.0000 | 1.0000 | 0.0000 | 2.0000 | FAIL |\nauthenticity: provider=stub expected=ollama -> NOT AUTHENTIC\ntool usage: total_tool_calls=20 no_tools_mode=False\nnon-triviality: distinct_answers=11 answered_n=20\nmetrics: task_success=0.0000 tool_precision=1.0000 invalid_rate=0.0000 mean_steps=2.0000 (n=20)\nREGRESSION: task_success 0.0000 < floor 0.6000 - tolerance 0.0500\nREGRESSION: authenticity: provider 'stub' is not the recorded real model 'ollama'; a stub or sabotage run cannot pass the gate\n"
+}

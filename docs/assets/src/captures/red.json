@@ -1,0 +1,14 @@
+{
+  "name": "red",
+  "command": [
+    "bash",
+    "scripts/prove_gate.sh"
+  ],
+  "exit_code": 0,
+  "captured_at": "2026-10-04T00:19:22.934468+00:00",
+  "commit": "5674f4328c7dd04efc2e2b49ecf094ef68d7feb9",
+  "line_count": 26,
+  "env_passed": [],
+  "note": "Volatile per-run temp paths in the exit-2 error lines redacted to <tmpdir> (macOS mktemp); no other change.",
+  "output": "== make red: proving the gate fails on each sabotage ==\nPASS [1 stub below task_success floor]: exit 1, named 'task_success'\n    REGRESSION: task_success 0.0000 < floor 0.6000 - tolerance 0.0500\n    REGRESSION: authenticity: provider 'stub' is not the recorded real model 'ollama'; a stub or sabotage run cannot pass the gate\nPASS [2 no tools (answers blind)]: exit 1, named 'tool_usage'\n    REGRESSION: task_success 0.0000 < floor 0.6000 - tolerance 0.0500\n    REGRESSION: tool_precision is missing; cannot verify against floor 0.5000 (fail-closed)\n    REGRESSION: authenticity: provider 'stub' is not the recorded real model 'ollama'; a stub or sabotage run cannot pass the gate\n    REGRESSION: tool_usage: the agent used no tools across the run (tool use is required)\nPASS [3 hardcoded answer]: exit 1, named 'non_triviality'\n    REGRESSION: task_success 0.0000 < floor 0.6000 - tolerance 0.0500\n    REGRESSION: tool_precision is missing; cannot verify against floor 0.5000 (fail-closed)\n    REGRESSION: authenticity: provider 'stub' is not the recorded real model 'ollama'; a stub or sabotage run cannot pass the gate\n    REGRESSION: tool_usage: the agent used no tools across the run (tool use is required)\n    REGRESSION: non_triviality: agent output shows no task effect (final answers byte-identical across distinct tasks)\nPASS [4 forced invalid actions]: exit 1, named 'invalid_action_rate'\n    REGRESSION: task_success 0.0000 < floor 0.6000 - tolerance 0.0500\n    REGRESSION: tool_precision is missing; cannot verify against floor 0.5000 (fail-closed)\n    REGRESSION: authenticity: provider 'stub' is not the recorded real model 'ollama'; a stub or sabotage run cannot pass the gate\n    REGRESSION: tool_usage: the agent used no tools across the run (tool use is required)\n    REGRESSION: invalid_action_rate 1.0000 > max 0.2000; the agent emitted malformed actions\nPASS [5 empty tasks (exit 2)]: exit 2, named 'empty'\n    ailab-eval: error: <tmpdir>/empty.jsonl: task set is empty\nPASS [6 below min_tasks (exit 2)]: exit 2, named 'min_tasks'\n    ailab-eval: error: <tmpdir>/tiny.jsonl: 1 tasks is below min_tasks 8\n== all red cases failed the gate as required ==\n"
+}
