@@ -1,0 +1,21 @@
+{
+  "name": "eval",
+  "command": [
+    "uv",
+    "run",
+    "ailab-eval",
+    "--provider",
+    "replay",
+    "--cassette",
+    "fixtures/cassettes/agent_gemma3_27b.json",
+    "--model",
+    "gemma3:27b"
+  ],
+  "exit_code": 0,
+  "captured_at": "2026-10-04T00:19:22.538613+00:00",
+  "commit": "5674f4328c7dd04efc2e2b49ecf094ef68d7feb9",
+  "line_count": 7,
+  "env_passed": [],
+  "note": "real gemma3:27b pass replayed from the committed cassette; no live model called.",
+  "output": "| Date | Commit | Provider | Dataset | max_steps | task_success | tool_precision | invalid_rate | mean_steps | Notes |\n|---|---|---|---|---|---|---|---|---|---|\n| 2026-10-04 | 5674f43 | ollama | tasks (n=20) | 6 | 0.9000 | 1.0000 | 0.0000 | 2.7500 | PASS |\nauthenticity: provider=ollama expected=ollama -> ok\ntool usage: total_tool_calls=35 no_tools_mode=False\nnon-triviality: distinct_answers=20 answered_n=20\nmetrics: task_success=0.9000 tool_precision=1.0000 invalid_rate=0.0000 mean_steps=2.7500 (n=20)\n"
+}
